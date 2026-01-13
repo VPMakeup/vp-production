@@ -1,0 +1,30 @@
+.about {
+  display: flex;
+  flex-direction: row; /* <-- row instead of column */
+  /* space between WorkType and CategoryContainer */
+  margin: 0 auto;
+  padding: 6rem 8rem;
+  background-color: #f3eeee;
+  color: black;
+}
+
+.about > div:first-child {
+  /* WorkType column */
+  flex: 0 0 auto; /* keeps its size */
+}
+
+.about > section {
+  /* CategoryContainer column */
+  flex: 1; /* takes remaining space */
+}
+
+.about section {
+  width: 100%;
+}
+
+@media (max-width: 900px) {
+  .about {
+    flex-direction: column; /* stack on small screens */
+    padding: 4rem 1.5rem;
+  }
+}

@@ -1,0 +1,40 @@
+.about {
+  display: flex;
+  flex-direction: column;
+  gap: 10rem;
+  margin: 0 auto;
+  padding: 6rem 8rem;
+  background-color: #f3eeee;
+  overflow-x: hidden;
+  font-family: var(--font-bagnard), sans-serif;
+  color: #3c3c3b;
+}
+
+.about section {
+  width: 100%;
+}
+
+.body p {
+  margin-bottom: 1.5rem;
+  line-height: 1.7;
+}
+
+@media (max-width: 1024px) {
+  .about {
+    padding: 5rem 3rem;
+    gap: 8rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .about {
+    padding: 4rem 1.5rem;
+    gap: 6rem;
+  }
+}
+
+.instagramSection {
+  display: flex;
+  flex-direction: column;
+  gap: 4rem;
+}

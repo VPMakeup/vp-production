@@ -1,0 +1,58 @@
+@import "tailwindcss";
+
+:root {
+  --background: #ffffff;
+  --foreground: #ffffff;
+}
+
+a,
+button,
+input[type="button"],
+input[type="submit"],
+label {
+  cursor: pointer;
+}
+
+html {
+  overflow-x: hidden;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #ffffff;
+    --foreground: #ededed;
+  }
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-optican), monospace;
+}
+
+:root {
+  --nav-height: 80px;
+}
+
+.page {
+  padding-top: var(--nav-height);
+}
+
+@media (max-width: 768px) {
+  :root {
+    --nav-height: 130px;
+  }
+}

@@ -1,0 +1,63 @@
+.wrapper {
+  position: relative;
+  padding-top: 100px; /* space for fixed navbar */
+  height: 100%; /* optional: keep full height for vertical centering */
+}
+.sideTitle {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  writing-mode: vertical-rl;
+  text-orientation: mixed;
+  font-size: 3rem;
+  letter-spacing: 0.35em;
+  text-transform: uppercase;
+  color: #b58b8b;
+  pointer-events: none;
+}
+.sideTitleLeft {
+  left: -4rem;
+}
+.sideTitleRight {
+  right: -4rem;
+}
+.section {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4rem;
+  align-items: center;
+}
+.reverse {
+  direction: rtl;
+}
+.reverse > * {
+  direction: ltr;
+}
+.textCol {
+  max-width: 520px;
+}
+.displayline {
+  padding-top: 1.5rem;
+  border-top: 1px solid #ddd;
+  width: 8rem;
+}
+.title {
+  font-size: 2rem;
+  margin-bottom: 1.5rem;
+}
+@media (max-width: 900px) {
+  .sideTitle {
+    position: static;
+    writing-mode: horizontal-tb;
+    transform: none;
+    margin-bottom: 1.5rem;
+  }
+  .sideTitleLeft,
+  .sideTitleRight {
+    left: auto;
+    right: auto;
+  }
+  .section {
+    grid-template-columns: 1fr;
+  }
+}

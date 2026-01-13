@@ -1,0 +1,11 @@
+# robots.txt for victoriapolandmakeup.com
+
+User-agent: *
+Disallow: /studio
+Disallow: /api
+
+# Allow all other pages
+Allow: /
+
+# Optional: specify sitemap
+Sitemap: https://victoriapolandmakeup.com/sitemap.xml

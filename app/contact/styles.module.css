@@ -1,0 +1,44 @@
+.contact {
+  background-color: #cdaca3;
+  background-size: 100dvh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 8rem 2rem;
+  text-align: center;
+
+  min-height: calc(100dvh - var(--nav-height));
+}
+.header {
+  font-size: clamp(1.5rem, 2.5vw, 2.25rem);
+  font-weight: 400;
+  margin-bottom: 1rem;
+  margin-top: 1rem;
+}
+.subheader {
+  font-size: clamp(1rem, 2vw, 2rem);
+  font-weight: 400;
+  margin-bottom: 4rem;
+}
+
+.block {
+  margin-bottom: 3rem;
+}
+
+.label {
+  font-size: 0.875rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  margin-bottom: 1rem;
+}
+
+@media screen and (max-width: 768px) {
+  .contact {
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+
+    min-height: calc(100dvh - var(--nav-height));
+  }
+}

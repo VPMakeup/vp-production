@@ -1,0 +1,50 @@
+/* CategoryTile.module.css */
+
+.tile {
+  position: relative;
+  display: block;
+  overflow: hidden;
+  border-radius: 12px;
+  cursor: pointer;
+}
+
+.imageWrap {
+  position: relative;
+  width: 100%;
+  /* aspectRatio applied inline from component */
+}
+
+.image {
+  object-fit: cover;
+  width: 100%;
+  height: 100%;
+  transition: transform 0.3s ease;
+}
+
+.tile:hover .image {
+  transform: scale(1.05);
+}
+
+.overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.6);
+  color: #fff;
+  opacity: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 1rem;
+  transition: opacity 0.3s ease;
+}
+
+.tile:hover .overlay {
+  opacity: 1;
+}
+
+.overlay h3,
+.overlay p {
+  margin: 0.25rem 0;
+}
