@@ -128,30 +128,42 @@ export default async function ProjectPage({
       </article>
 
       <aside className={styles.sidebar}>
-        <div className={styles.metaGroup}>
-          <span className={styles.metaLabel}>Client</span>
-          <p className={styles.metaValue}>{project.client}</p>
-        </div>
-
-        <div className={styles.metaGroup}>
-          <span className={styles.metaLabel}>Role</span>
-          <p className={styles.metaValue}>{project.role}</p>
-        </div>
-
-        <hr className={styles.divider} />
-
-        <div className={styles.metaGrid}>
+        {project.client && (
           <div className={styles.metaGroup}>
-            <span className={styles.metaLabel}>Photographer</span>
-            <p>{project.photographer}</p>
+            <span className={styles.metaLabel}>Client</span>
+            <p className={styles.metaValue}>{project.client}</p>
           </div>
+        )}
+
+        {project.role && (
           <div className={styles.metaGroup}>
-            <span className={styles.metaLabel}>Production</span>
-            <p>{project.producer}</p>
+            <span className={styles.metaLabel}>Role</span>
+            <p className={styles.metaValue}>{project.role}</p>
           </div>
-        </div>
+        )}
+
+        {(project.photographer || project.producer) && (
+          <>
+            <hr className={styles.divider} />
+
+            <div className={styles.metaGrid}>
+              {project.photographer && (
+                <div className={styles.metaGroup}>
+                  <span className={styles.metaLabel}>Photographer</span>
+                  <p>{project.photographer}</p>
+                </div>
+              )}
+
+              {project.producer && (
+                <div className={styles.metaGroup}>
+                  <span className={styles.metaLabel}>Production</span>
+                  <p>{project.producer}</p>
+                </div>
+              )}
+            </div>
+          </>
+        )}
       </aside>
-
       <section className={styles.featured}>
         <FeaturedContainer projects={projects} excludeSlug={slug} />
       </section>
