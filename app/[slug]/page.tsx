@@ -80,7 +80,7 @@ export default async function ProjectPage({
 
   const description =
     project.body?.[0]?.children?.[0]?.text ||
-    `${project.title} – Makeup and hair project by Victoria Poland.`;
+    `${project.title} – MUA project by Victoria Poland.`;
 
   return (
     <main className={styles.page}>

@@ -57,19 +57,19 @@ export default function ContactPage() {
 
         <ContactLink
           href="https://instagram.com/victoriapolandstudioltd"
-          label="Instagram"
+          label=""
           icon={<FaInstagram />}
           external
         />
         <ContactLink
           href="https://linkedin.com/in/victoria-poland-39a95618"
-          label="LinkedIn"
+          label=""
           icon={<FaLinkedin />}
           external
         />
         <ContactLink
           href="https://facebook.com/profile.php?id=100087655003059"
-          label="Facebook"
+          label=""
           icon={<FaFacebook />}
           external
         />

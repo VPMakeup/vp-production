@@ -35,6 +35,10 @@
   opacity: 1;
 }
 
+.contentSection {
+  font-family: var(--font-bagnard), sans-serif;
+}
+
 .title {
   font-size: 2.75rem;
   font-weight: 400;
