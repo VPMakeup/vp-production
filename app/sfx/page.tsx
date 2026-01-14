@@ -13,6 +13,7 @@ export const metadata: Metadata = {
     type: "website",
   },
 };
+export const revalidate = 60;
 
 import CategoryContainer from "../components/categoryContainer/CategoryContainer";
 //import CategoryTile from "../components/categoryContainer/CategoryTile";
