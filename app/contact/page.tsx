@@ -36,7 +36,7 @@ export default function ContactPage() {
           href="mailto:vp@victoriapolandstudio.com"
           label="vp@victoriapolandstudio.com"
           icon={<FaMailBulk />}
-          ariaLabel="Send an email to vp@victoriapolandstudio.com"
+          ariaLabel="Send an email to vp@victoriapolandmakeup.com"
         />
       </section>
 

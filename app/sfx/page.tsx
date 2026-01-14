@@ -22,7 +22,7 @@ import styles from "./styles.module.css";
 import { getProjectsByCategoryPaginated } from "@/sanity/lib/queries";
 
 export default async function SFX() {
-  const projects = await getProjectsByCategoryPaginated("SFX", 0, 9);
+  const projects = await getProjectsByCategoryPaginated("sfx", 0, 9);
 
   const infoText = "Check out our latest SFX project";
   return (
@@ -34,7 +34,7 @@ export default async function SFX() {
       <section aria-label="SFX projects">
         <CategoryContainer
           initialProjects={projects}
-          category="SFX"
+          category="sfx"
           infoText={infoText}
         />
       </section>

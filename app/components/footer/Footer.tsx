@@ -41,9 +41,9 @@ export default function Footer() {
           />
 
           <ContactLink
-            href="mailto:vp@victoriapolandstudio.com"
-            label="vp@victoriapolandstudio.com"
-            ariaLabel="Send an email to vp@victoriapolandstudio.com"
+            href="mailto:vp@victoriapolandmakeup.com"
+            label="vp@victoriapolandmakeup.com"
+            ariaLabel="Send an email to vp@victoriapolandmakeup.com"
           />
         </div>
 

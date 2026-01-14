@@ -22,7 +22,7 @@ import styles from "./styles.module.css";
 import { getProjectsByCategoryPaginated } from "@/sanity/lib/queries";
 
 export default async function Film() {
-  const projects = await getProjectsByCategoryPaginated("Film", 0, 9);
+  const projects = await getProjectsByCategoryPaginated("film", 0, 9);
 
   const infoText = "Check out our latest Film project";
   return (
@@ -34,7 +34,7 @@ export default async function Film() {
       <section aria-label="Film projects">
         <CategoryContainer
           initialProjects={projects}
-          category="Film"
+          category="film"
           infoText={infoText}
         />
       </section>

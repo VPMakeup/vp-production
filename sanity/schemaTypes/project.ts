@@ -43,6 +43,12 @@ export const project = defineType({
       of: [{ type: "block" }],
     }),
 
+    defineField({
+      name: "embedUrl",
+      title: "Embed URL",
+      type: "url",
+    }),
+
     // ✅ NEW: Sidebar metadata
     defineField({
       name: "client",

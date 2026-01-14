@@ -22,7 +22,7 @@ import styles from "./styles.module.css";
 import { getProjectsByCategoryPaginated } from "@/sanity/lib/queries";
 
 export default async function MakeupAndHair() {
-  const projects = await getProjectsByCategoryPaginated("MakeupandHair", 0, 9);
+  const projects = await getProjectsByCategoryPaginated("makeupandhair", 0, 9);
 
   const infoText = "Check out our latest Makeup & Hair project";
   return (
@@ -34,7 +34,7 @@ export default async function MakeupAndHair() {
       <section aria-label="Makeup & Hair projects">
         <CategoryContainer
           initialProjects={projects}
-          category="MakeupandHair"
+          category="makeupandhair"
           infoText={infoText}
         />
       </section>
