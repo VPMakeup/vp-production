@@ -61,7 +61,7 @@ export default function AboutPage() {
             </p>
           </>
         }
-        imageSrc="/vp2.png"
+        imageSrc="/victoriapoland.jpg"
         imageAlt="Portrait of London makeup artist Victoria Poland"
       />
 
