@@ -10,8 +10,8 @@
   align-items: center;
   justify-content: center;
 
-  width: 100%;
-  height: 90px; /* LOCKED visual height */
+  width: auto;
+  height: auto; /* LOCKED visual height */
 
   padding: 10px; /* breathing room */
 }

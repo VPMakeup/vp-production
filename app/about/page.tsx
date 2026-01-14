@@ -34,7 +34,7 @@ export default function AboutPage() {
         sideTitle="About"
         sideTitlePosition="right"
         body={
-          <>
+          <div className={styles.body}>
             <h1 className="sr-only">
               About Victoria Poland – Makeup Artist & SFX Designer
             </h1>
@@ -59,7 +59,7 @@ export default function AboutPage() {
               the potter’s wheel, exploring galleries, travelling to far-flung
               places, cooking, or listening to live music.
             </p>
-          </>
+          </div>
         }
         imageSrc="/victoriapoland.jpg"
         imageAlt="Portrait of London makeup artist Victoria Poland"

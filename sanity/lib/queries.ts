@@ -36,7 +36,8 @@ export async function getProjectBySlug(slug: string): Promise<Project | null> {
       role,
       photographer,
       producer,
-      body
+      body,
+      embedUrl
     }
     `,
     { slug },

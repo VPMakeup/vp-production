@@ -46,7 +46,6 @@ export default function SplitSection({
           {eyebrow && <span className={styles.eyebrow}>{eyebrow}</span>}
 
           <div className={styles.body}>{body}</div>
-          <p className={`${styles.signature} ${dancing.className}`}>Victoria</p>
         </div>
 
         <div className={styles.imageCol}>

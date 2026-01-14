@@ -18,7 +18,8 @@ export default function ClientLogosSection() {
               src={`/brands/${logo}`}
               alt={logo.replace(".svg", "")}
               width={120}
-              height={60}
+              height={0}
+              style={{ height: "auto" }}
             />
           </div>
         ))}

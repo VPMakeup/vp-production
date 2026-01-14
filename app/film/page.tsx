@@ -24,7 +24,7 @@ import { getProjectsByCategoryPaginated } from "@/sanity/lib/queries";
 export default async function Film() {
   const projects = await getProjectsByCategoryPaginated("film", 0, 9);
 
-  const infoText = "Check out our latest Film project";
+  const infoText = "Check out my latest Film project";
   return (
     <main className={styles.about}>
       {" "}

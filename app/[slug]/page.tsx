@@ -8,6 +8,7 @@ import type { Metadata } from "next";
 import { getProjectsFromSanity, getProjectBySlug } from "@/sanity/lib/queries";
 import FeaturedContainer from "../components/featured/FeaturedContainer";
 import { SanityImageSource } from "@sanity/image-url/lib/types/types";
+import EmbedIframe from "../components/iframe/EmbedIframe";
 
 const { projectId, dataset } = client.config() as {
   projectId: string;
@@ -119,25 +120,10 @@ export default async function ProjectPage({
         )}
 
         <section className={styles.contentSection}>
-          <p className={styles.date}>
-            Published:{" "}
-            <time dateTime={project.publishedAt}>
-              {new Date(project.publishedAt!).toLocaleDateString()}
-            </time>
-          </p>
-
           {Array.isArray(project.body) && <PortableText value={project.body} />}
-          <div>
-            {project.embedUrl && (
-              <iframe
-                src={project.embedUrl}
-                width="100%"
-                height="500"
-                loading="lazy"
-                allowFullScreen
-              />
-            )}
-          </div>
+          {project.embedUrl?.trim() && (
+            <EmbedIframe url={project.embedUrl.trim()} />
+          )}
         </section>
       </article>
 
@@ -160,7 +146,7 @@ export default async function ProjectPage({
             <p>{project.photographer}</p>
           </div>
           <div className={styles.metaGroup}>
-            <span className={styles.metaLabel}>Producer</span>
+            <span className={styles.metaLabel}>Production</span>
             <p>{project.producer}</p>
           </div>
         </div>

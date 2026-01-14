@@ -14,7 +14,7 @@
   font-size: 3rem;
   letter-spacing: 0.35em;
   text-transform: uppercase;
-  color: #b58b8b;
+  color: #ce8c91;
   pointer-events: none;
   font-family: var(--font-optican), sans-serif;
 }
@@ -62,7 +62,7 @@
   font-size: 0.85rem;
   letter-spacing: 0.15em;
   text-transform: uppercase;
-  color: #b58b8b;
+  color: #ce8c91;
   margin-bottom: 1rem;
 }
 
