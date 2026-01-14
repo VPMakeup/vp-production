@@ -20,4 +20,5 @@ export type Project = ProjectPreview & {
   title?: string;
   titleImage?: SanityImageSource;
   publishedAt?: string;
+  embedUrl?: string;
 };

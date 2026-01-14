@@ -45,20 +45,16 @@ export async function getProjectBySlug(slug: string): Promise<Project | null> {
 }
 
 export async function getProjectsByCategoryPaginated(
-  categoryTitle: string,
+  categorySlug: string,
   start = 0,
   limit = 9
-) {
-  const category = await client.fetch<{ _id: string } | null>(
-    `*[_type == "category" && title == $categoryTitle][0]{ _id }`,
-    { categoryTitle }
-  );
-
-  if (!category) return [];
-
+): Promise<ProjectPreview[]> {
   return client.fetch(
     `
-    *[_type == "project" && references($categoryId)]
+    *[
+      _type == "project" &&
+      references(*[_type == "category" && slug.current == $categorySlug]._id)
+    ]
     | order(publishedAt desc)
     [$start...$end] {
       _id,
@@ -77,9 +73,10 @@ export async function getProjectsByCategoryPaginated(
     }
     `,
     {
-      categoryId: category._id,
+      categorySlug,
       start,
       end: start + limit,
-    }
+    },
+    { next: { revalidate: 60 } }
   );
 }

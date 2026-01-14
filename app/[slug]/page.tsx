@@ -127,6 +127,17 @@ export default async function ProjectPage({
           </p>
 
           {Array.isArray(project.body) && <PortableText value={project.body} />}
+          <div>
+            {project.embedUrl && (
+              <iframe
+                src={project.embedUrl}
+                width="100%"
+                height="500"
+                loading="lazy"
+                allowFullScreen
+              />
+            )}
+          </div>
         </section>
       </article>
 

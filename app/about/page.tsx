@@ -71,8 +71,6 @@ export default function AboutPage() {
         reverse
         body={
           <>
-            <h2>Selected Clients & Commercial Work</h2>
-
             <p>
               As a makeup designer and SFX artist, Victoria has built a diverse
               skill set spanning beauty, character, and prosthetic work. She has
