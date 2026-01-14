@@ -5,11 +5,14 @@ const securityHeaders = [
   {
     key: "Content-Security-Policy",
     value: `
+      default-src 'self';
       script-src 'self' 'unsafe-inline' https://elfsightcdn.com https://static.elfsight.com;
-      frame-src https://elfsight.com https://static.elfsight.com https://www.google.com
-                https://maps.google.com;
-      img-src 'self' https: data:;
+      connect-src 'self' https://*.sanity.io;
+      img-src 'self' https: data: https://cdn.sanity.io https://behold.pictures https://cdn2.behold.pictures
+              https://scontent-sof1-1.cdninstagram.com https://scontent-sof1-2.cdninstagram.com;
       style-src 'self' 'unsafe-inline';
+      frame-src https://elfsight.com https://static.elfsight.com https://www.google.com https://maps.google.com
+                https://www.youtube.com https://player.vimeo.com;
     `
       .replace(/\s{2,}/g, " ")
       .trim(),
@@ -42,7 +45,7 @@ const nextConfig: NextConfig = {
       },
       {
         protocol: "https",
-        hostname: "cdn2.behold.pictures", // for the profile pic
+        hostname: "cdn2.behold.pictures",
       },
       {
         protocol: "https",

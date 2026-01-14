@@ -24,7 +24,7 @@ import { getProjectsByCategoryPaginated } from "@/sanity/lib/queries";
 export default async function SFX() {
   const projects = await getProjectsByCategoryPaginated("sfx", 0, 9);
 
-  const infoText = "Check out our latest SFX project";
+  const infoText = "Check out my latest SFX project";
   return (
     <main className={styles.about}>
       {" "}

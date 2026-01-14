@@ -110,12 +110,13 @@
   flex-direction: column;
   gap: 1.75rem;
   color: #2e3132;
+  margin-top: 3rem;
 }
 
 @media (min-width: 1024px) {
   .sidebar {
     position: sticky;
-    top: 5rem;
+    top: 6rem;
   }
 }
 

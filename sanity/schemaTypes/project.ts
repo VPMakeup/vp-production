@@ -67,7 +67,7 @@ export const project = defineType({
     }),
     defineField({
       name: "producer",
-      title: "Producer",
+      title: "Production",
       type: "string",
     }),
 

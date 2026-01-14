@@ -1,6 +1,8 @@
 .navbar {
   --nav-height: 80px;
-  box-shadow: -5px 1px 5px rgba(0, 0, 0, 0.1);
+
+  background: inherit;
+
   position: fixed;
   top: 0;
   left: 0;
@@ -8,7 +10,6 @@
 
   height: var(--nav-height);
 
-  background-color: #ffffff;
   display: flex;
   align-items: center;
   justify-content: space-between;

@@ -16,13 +16,7 @@ export const metadata: Metadata = {
 
 import styles from "./styles.module.css";
 import ContactLink from "../components/contactlink/ContactLink";
-import {
-  FaMailBulk,
-  FaPhone,
-  FaFacebook,
-  FaInstagram,
-  FaLinkedin,
-} from "react-icons/fa";
+import { FaFacebook, FaInstagram, FaLinkedin } from "react-icons/fa";
 
 export default function ContactPage() {
   return (
@@ -35,7 +29,7 @@ export default function ContactPage() {
         <ContactLink
           href="mailto:vp@victoriapolandstudio.com"
           label="vp@victoriapolandstudio.com"
-          icon={<FaMailBulk />}
+          icon=""
           ariaLabel="Send an email to vp@victoriapolandmakeup.com"
         />
       </section>
@@ -45,7 +39,7 @@ export default function ContactPage() {
         <ContactLink
           href="tel:+447904225801"
           label="+44 (0) 7904 225 801"
-          icon={<FaPhone />}
+          icon=""
           ariaLabel="Call +44 (0) 7904 225 801"
         />
       </section>
@@ -56,7 +50,7 @@ export default function ContactPage() {
         </h2>
 
         <ContactLink
-          href="https://instagram.com/victoriapolandstudioltd"
+          href="https://instagram.com/victoriapolandstudio"
           label=""
           icon={<FaInstagram />}
           external
