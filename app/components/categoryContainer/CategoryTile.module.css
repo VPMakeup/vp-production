@@ -1,4 +1,13 @@
-/* CategoryTile.module.css */
+.wrapper {
+  padding: 2rem;
+}
+
+.grid {
+  display: grid;
+  grid-auto-rows: 10px;
+  gap: 24px;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+}
 
 .tile {
   position: relative;
@@ -6,12 +15,12 @@
   overflow: hidden;
   border-radius: 12px;
   cursor: pointer;
+  margin-bottom: 0.5rem;
 }
 
 .imageWrap {
   position: relative;
   width: 100%;
-  /* aspectRatio applied inline from component */
 }
 
 .image {
