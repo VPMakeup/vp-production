@@ -36,6 +36,21 @@
 }
 
 .contentSection {
+  display: flex;
+  justify-content: left;
+  width: 100%;
+}
+
+.contentInner p {
+  margin-bottom: 1.75rem;
+}
+
+.contentInner {
+  max-width: 920px;
+  width: 100%;
+  font-size: 1.05rem;
+  line-height: 1.8;
+  color: #342f2d;
   font-family: var(--font-bagnard), sans-serif;
 }
 

@@ -33,6 +33,7 @@
 
 .imageWrapper {
   width: 360px;
+  height: 450px;
   position: relative;
 }
 
@@ -60,6 +61,7 @@
   .imageWrapper {
     order: 2;
     width: 260px;
+    height: 325px;
     margin: 0 auto;
   }
 

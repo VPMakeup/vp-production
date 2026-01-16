@@ -120,10 +120,14 @@ export default async function ProjectPage({
         )}
 
         <section className={styles.contentSection}>
-          {Array.isArray(project.body) && <PortableText value={project.body} />}
-          {project.embedUrl?.trim() && (
-            <EmbedIframe url={project.embedUrl.trim()} />
-          )}
+          <div className={styles.contentInner}>
+            {Array.isArray(project.body) && (
+              <PortableText value={project.body} />
+            )}
+            {project.embedUrl?.trim() && (
+              <EmbedIframe url={project.embedUrl.trim()} />
+            )}
+          </div>
         </section>
       </article>
 

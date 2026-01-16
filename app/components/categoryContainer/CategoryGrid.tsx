@@ -1,4 +1,5 @@
-// components/categoryContainer/CategoryGrid.tsx
+"use client";
+
 import styles from "./CategoryGrid.module.css";
 import { ProjectPreview } from "@/app/types/project";
 import CategoryTile from "./CategoryTile";
@@ -19,7 +20,7 @@ export default function CategoryGrid({
     <section className={styles.wrapper}>
       <div className={styles.grid}>
         {projects.map((project, i) => {
-          // Insert info block after 3rd project or last project if fewer
+          // Insert info block after 3rd project
           if (i === 3 || (projects.length < 4 && i === projects.length - 1)) {
             return (
               <CategoryInfoBlock
