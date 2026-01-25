@@ -1,3 +1,7 @@
+body {
+  --nav-bg: #f3eeee;
+}
+
 .about {
   display: flex;
   flex-direction: column;

@@ -17,18 +17,20 @@ export const metadata: Metadata = {
 import styles from "./styles.module.css";
 import ContactLink from "../components/contactlink/ContactLink";
 import { FaFacebook, FaInstagram, FaLinkedin } from "react-icons/fa";
+import Navbar from "../components/navbar/Navbar";
 
 export default function ContactPage() {
   return (
     <main className={styles.contact}>
+      <Navbar backgroundColor="#cdaca3" />
       <h1 className={styles.header}>Contact</h1>
       <p className={styles.subheader}>Let’s collaborate. Get in touch.</p>
 
       <section className={styles.block}>
         <h2 className={styles.label}>Email</h2>
         <ContactLink
-          href="mailto:vp@victoriapolandstudio.com"
-          label="vp@victoriapolandstudio.com"
+          href="mailto:vp@victoriapolandmakeup.com"
+          label="vp@victoriapolandmakeup.com"
           icon=""
           ariaLabel="Send an email to vp@victoriapolandmakeup.com"
         />
@@ -50,7 +52,7 @@ export default function ContactPage() {
         </h2>
 
         <ContactLink
-          href="https://instagram.com/victoriapolandstudio"
+          href="https://instagram.com/victoriapolandmakeup"
           label=""
           icon={<FaInstagram />}
           external
