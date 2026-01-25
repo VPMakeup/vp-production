@@ -20,6 +20,7 @@ import CategoryContainer from "../components/categoryContainer/CategoryContainer
 import WorkType from "../components/work/WorkType";
 import styles from "./styles.module.css";
 import { getProjectsByCategoryPaginated } from "@/sanity/lib/queries";
+import Navbar from "../components/navbar/Navbar";
 
 export default async function SFX() {
   const projects = await getProjectsByCategoryPaginated("sfx", 0, 9);
@@ -27,7 +28,7 @@ export default async function SFX() {
   const infoText = "Check out my latest SFX project";
   return (
     <main className={styles.about}>
-      {" "}
+      <Navbar backgroundColor="#f3eeee" />{" "}
       <div>
         <WorkType sideTitle="SFX" sideTitlePosition="left" />{" "}
       </div>

@@ -29,6 +29,28 @@ export const project = defineType({
       type: "image",
       options: { hotspot: true },
     }),
+
+    defineField({
+      name: "projectImages",
+      title: "Project Images",
+      description: "Additional images for the project gallery",
+      type: "array",
+      of: [
+        defineArrayMember({
+          type: "image",
+          options: {
+            hotspot: true,
+          },
+          fields: [
+            {
+              name: "alt",
+              title: "Alt text",
+              type: "string",
+            },
+          ],
+        }),
+      ],
+    }),
     defineField({
       name: "categories",
       type: "array",

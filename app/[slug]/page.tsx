@@ -9,6 +9,7 @@ import { getProjectsFromSanity, getProjectBySlug } from "@/sanity/lib/queries";
 import FeaturedContainer from "../components/featured/FeaturedContainer";
 import { SanityImageSource } from "@sanity/image-url/lib/types/types";
 import EmbedIframe from "../components/iframe/EmbedIframe";
+import Navbar from "../components/navbar/Navbar";
 
 const { projectId, dataset } = client.config() as {
   projectId: string;
@@ -82,9 +83,10 @@ export default async function ProjectPage({
   const description =
     project.body?.[0]?.children?.[0]?.text ||
     `${project.title} – MUA project by Victoria Poland.`;
-
+  const projectImages = project.projectImages ?? [];
   return (
     <main className={styles.page}>
+      <Navbar backgroundColor="#f6f6f6" />
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{
@@ -129,6 +131,21 @@ export default async function ProjectPage({
             )}
           </div>
         </section>
+        {projectImages.length > 0 && (
+          <section className={styles.projectImages}>
+            {projectImages.map((img) => (
+              <Image
+                key={img.asset._id}
+                src={img.asset.url}
+                alt={img.alt ?? project.title}
+                width={1600}
+                height={1200}
+                sizes="(max-width: 768px) 100vw, 80vw"
+                className={styles.projectImage}
+              />
+            ))}
+          </section>
+        )}
       </article>
 
       <aside className={styles.sidebar}>

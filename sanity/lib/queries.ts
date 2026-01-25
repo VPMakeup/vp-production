@@ -30,14 +30,28 @@ export async function getProjectBySlug(slug: string): Promise<Project | null> {
       _id,
       title,
       slug,
-      titleImage,
       publishedAt,
       client,
       role,
       photographer,
       producer,
       body,
-      embedUrl
+      embedUrl,
+
+      titleImage{
+        asset->{
+          _id,
+          url
+        }
+      },
+
+      projectImages[]{
+        alt,
+        asset->{
+          _id,
+          url
+        }
+      }
     }
     `,
     { slug },

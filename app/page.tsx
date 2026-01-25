@@ -33,12 +33,14 @@ import FeaturedContainer from "./components/featured/FeaturedContainer";
 import HeroNameCarousel from "./home/components/hero/HeroNameCarousel";
 import TriplePanelCarousel from "./home/components/hero/TriplePanelCarousel";
 import SecondHero from "./home/components/second/SecondHero";
+import Navbar from "./components/navbar/Navbar";
 
 export default async function Home() {
   const projects = await getProjectsFromSanity();
 
   return (
     <main>
+      <Navbar backgroundColor="#fff" />
       <h1 className="sr-only">
         Victoria Poland – Makeup Artist for Film, TV & SFX
       </h1>
@@ -64,19 +66,25 @@ export default async function Home() {
               leftImage: "/wonderhood.jpg",
               centerImage: "/wagamama.jpg",
               rightBg: "#C7C3C1",
-              text: "Victoria Poland is an experienced Makeup Artist based in London. Focussing on TV, Film and SFX.",
+              text: "Victoria is an experienced makeup artist based in London. Focussing on SFX makeup for stills and moving image",
             },
             {
               leftImage: "/benstockleyedit.jpg",
               centerImage: "/instaportrait.jpg",
               rightBg: "#CDACA3",
-              text: "With over 14 years experience, Victoria works across advertising, drama and high-end photography.",
+              text: "With over 15 years experience working across advertising, moving image and high-end photography",
             },
             {
               leftImage: "/nectar_insta.jpg",
               centerImage: "/threemobile.jpg",
               rightBg: "#BEB9A3",
-              text: "Her work appears internationally across film, broadcast and commercial campaigns.",
+              text: "Her work appears internationally across commercial campaigns, spanning moving image and photography",
+            },
+            {
+              leftImage: "/wagamama.jpg",
+              centerImage: "/instaportrait.jpg",
+              rightBg: "#CDACA3",
+              text: "Collaborating with leading photographers, directors, talent and creative teams, Victoria delivers a high level of artistry and professionalism as a makeup artist on every project",
             },
           ]}
           interval={6000}

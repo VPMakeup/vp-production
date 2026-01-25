@@ -4,6 +4,7 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import styles from "./Navbar.module.css";
 import Image from "next/image";
+import { useState } from "react";
 
 const links = [
   { name: "About", href: "/about" },
@@ -12,20 +13,21 @@ const links = [
   { name: "Film", href: "/film" },
   { name: "Contact", href: "/contact" },
 ];
+type NavbarProps = {
+  backgroundColor?: string; // optional prop
+};
 
-export default function Navbar({
-  className = "navbar",
-}: {
-  className?: string;
-}) {
+export default function Navbar({ backgroundColor }: NavbarProps) {
   const pathname = usePathname();
+  const [isOpen, setIsOpen] = useState(false);
 
-  // Hide navbar on any Studio route
-  const isStudio = pathname.startsWith("/studio");
-  if (isStudio) return null;
+  if (pathname.startsWith("/studio")) return null;
 
   return (
-    <nav className={`${styles.navbar} ${className}`}>
+    <nav
+      className={styles.navbar}
+      style={{ backgroundColor: backgroundColor || "transparent" }}
+    >
       <div className={styles.logo}>
         <Link href="/" aria-label="Go to homepage">
           <Image
@@ -38,20 +40,35 @@ export default function Navbar({
           />
         </Link>
       </div>
-      <ul className={styles.navLinks}>
-        {links.map((link) => (
-          <li key={link.href}>
-            <Link
-              href={link.href}
-              className={
-                pathname === link.href ? styles.activeLink : styles.link
-              }
-            >
-              {link.name}
-            </Link>
-          </li>
-        ))}
-      </ul>
+
+      <button
+        className={styles.menuButton}
+        aria-label="Toggle navigation"
+        aria-expanded={isOpen}
+        onClick={() => setIsOpen((v) => !v)}
+      >
+        <span />
+        <span />
+        <span />
+      </button>
+
+      <div className={`${styles.navMenu} ${isOpen ? styles.open : ""}`}>
+        <ul className={styles.navList}>
+          {links.map((link) => (
+            <li key={link.href}>
+              <Link
+                href={link.href}
+                onClick={() => setIsOpen(false)}
+                className={
+                  pathname === link.href ? styles.activeLink : styles.link
+                }
+              >
+                {link.name}
+              </Link>
+            </li>
+          ))}
+        </ul>
+      </div>
     </nav>
   );
 }
