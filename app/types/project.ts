@@ -2,6 +2,13 @@ import { SanityImageSource } from "@sanity/image-url/lib/types/types";
 import { PortableTextBlock } from "next-sanity";
 import type { SanityImage } from "./sanity";
 
+export type TriplePanelSlide = {
+  leftImage: SanityImageSource;
+  centerImage: SanityImageSource;
+  rightBg: string;
+  text: string;
+};
+
 export type ProjectPreview = {
   _id: string;
   title: string;

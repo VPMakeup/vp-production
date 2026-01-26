@@ -1,5 +1,18 @@
 import { client } from "./client";
-import { Project, ProjectPreview } from "@/app/types/project";
+import { Project, ProjectPreview, TriplePanelSlide } from "@/app/types/project";
+
+export async function getTriplePanelSlides(): Promise<TriplePanelSlide[]> {
+  return client.fetch(
+    `*[_type == "home"][0].triplePanelSlides[]{
+      leftImage,
+      centerImage,
+      rightBg,
+      text
+    }`,
+    {},
+    { next: { revalidate: 30 } }
+  );
+}
 
 /* ---------- all projects (preview) ---------- */
 

@@ -28,15 +28,21 @@ export const metadata: Metadata = {
   },
 };
 
-import { getProjectsFromSanity } from "@/sanity/lib/queries";
+import {
+  getProjectsFromSanity,
+  getTriplePanelSlides,
+} from "@/sanity/lib/queries";
+
 import FeaturedContainer from "./components/featured/FeaturedContainer";
 import HeroNameCarousel from "./home/components/hero/HeroNameCarousel";
 import TriplePanelCarousel from "./home/components/hero/TriplePanelCarousel";
 import SecondHero from "./home/components/second/SecondHero";
 import Navbar from "./components/navbar/Navbar";
+import { urlFor } from "@/sanity/lib/image";
 
 export default async function Home() {
   const projects = await getProjectsFromSanity();
+  const slides = (await getTriplePanelSlides()) ?? [];
 
   return (
     <main>
@@ -60,35 +66,16 @@ export default async function Home() {
       </section>
 
       <section aria-label="Introduction">
-        <TriplePanelCarousel
-          slides={[
-            {
-              leftImage: "/wonderhood.jpg",
-              centerImage: "/wagamama.jpg",
-              rightBg: "#C7C3C1",
-              text: "Victoria is an experienced makeup artist based in London. Focussing on SFX makeup for stills and moving image",
-            },
-            {
-              leftImage: "/benstockleyedit.jpg",
-              centerImage: "/instaportrait.jpg",
-              rightBg: "#CDACA3",
-              text: "With over 15 years experience working across advertising, moving image and high-end photography",
-            },
-            {
-              leftImage: "/nectar_insta.jpg",
-              centerImage: "/threemobile.jpg",
-              rightBg: "#BEB9A3",
-              text: "Her work appears internationally across commercial campaigns, spanning moving image and photography",
-            },
-            {
-              leftImage: "/wagamama.jpg",
-              centerImage: "/instaportrait.jpg",
-              rightBg: "#CDACA3",
-              text: "Collaborating with leading photographers, directors, talent and creative teams, Victoria delivers a high level of artistry and professionalism as a makeup artist on every project",
-            },
-          ]}
-          interval={6000}
-        />
+        {slides.length > 0 && (
+          <TriplePanelCarousel
+            slides={slides.map((slide) => ({
+              leftImage: urlFor(slide.leftImage).width(1200).url(),
+              centerImage: urlFor(slide.centerImage).width(1200).url(),
+              rightBg: slide.rightBg,
+              text: slide.text,
+            }))}
+          />
+        )}
       </section>
 
       <section aria-label="About Victoria Poland">

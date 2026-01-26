@@ -19,7 +19,7 @@ export default function InstagramProfile() {
 
       <div className={styles.bio_container}>
         <ContactLink
-          href="https://instagram.com/victoriapolandstudioltd"
+          href="https://instagram.com/victoriapolandmakeup"
           label={`@${data.username}`}
           external
         />
