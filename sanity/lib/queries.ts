@@ -1,5 +1,10 @@
 import { client } from "./client";
-import { Project, ProjectPreview, TriplePanelSlide } from "@/app/types/project";
+import {
+  HeroCarouselImage,
+  Project,
+  ProjectPreview,
+  TriplePanelSlide,
+} from "@/app/types/project";
 
 export async function getTriplePanelSlides(): Promise<TriplePanelSlide[]> {
   return client.fetch(
@@ -8,6 +13,16 @@ export async function getTriplePanelSlides(): Promise<TriplePanelSlide[]> {
       centerImage,
       rightBg,
       text
+    }`,
+    {},
+    { next: { revalidate: 30 } }
+  );
+}
+
+export async function getHeroCarouselImages(): Promise<HeroCarouselImage[]> {
+  return client.fetch(
+    `*[_type == "heroNameCarousel"][0].images[]{
+      image
     }`,
     {},
     { next: { revalidate: 30 } }
