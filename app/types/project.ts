@@ -9,6 +9,10 @@ export type TriplePanelSlide = {
   text: string;
 };
 
+export type HeroCarouselImage = {
+  image: SanityImageSource;
+};
+
 export type ProjectPreview = {
   _id: string;
   title: string;

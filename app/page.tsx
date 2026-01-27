@@ -29,6 +29,7 @@ export const metadata: Metadata = {
 };
 
 import {
+  getHeroCarouselImages,
   getProjectsFromSanity,
   getTriplePanelSlides,
 } from "@/sanity/lib/queries";
@@ -43,6 +44,7 @@ import { urlFor } from "@/sanity/lib/image";
 export default async function Home() {
   const projects = await getProjectsFromSanity();
   const slides = (await getTriplePanelSlides()) ?? [];
+  const heroImages = (await getHeroCarouselImages()) ?? [];
 
   return (
     <main>
@@ -52,17 +54,14 @@ export default async function Home() {
       </h1>
 
       <section aria-label="Hero showcase">
-        <HeroNameCarousel
-          images={[
-            "/VPTITLEIMAGE1.jpeg",
-            "/VPTITLEIMAGE2.jpg",
-            "/VPTITLEIMAGE3.jpg",
-            "/VPTITLEIMAGE4.jpg",
-            "/VPTITLEIMAGE5.jpg",
-            "/VPTITLEIMAGE6.jpg",
-          ]}
-          interval={4500}
-        />
+        {heroImages.length > 0 && (
+          <HeroNameCarousel
+            images={heroImages.map((img) =>
+              urlFor(img.image).width(1200).url()
+            )}
+            interval={4500}
+          />
+        )}
       </section>
 
       <section aria-label="Introduction">

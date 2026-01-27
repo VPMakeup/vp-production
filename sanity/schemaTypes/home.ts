@@ -1,4 +1,3 @@
-// schemas/home.ts
 import { defineType, defineField } from "sanity";
 
 export const home = defineType({
