@@ -43,7 +43,7 @@
 
 @media (max-width: 768px) {
   .wrapper {
-    padding-top: 6rem;
+    padding-top: 2rem;
   }
   .grid {
     grid-template-columns: 1fr;
