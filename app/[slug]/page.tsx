@@ -126,24 +126,33 @@ export default async function ProjectPage({
             {Array.isArray(project.body) && (
               <PortableText value={project.body} />
             )}
+
             {project.embedUrl?.trim() && (
-              <EmbedIframe url={project.embedUrl.trim()} />
+              <div className={styles.embedWrapper}>
+                <EmbedIframe url={project.embedUrl.trim()} />
+              </div>
             )}
           </div>
         </section>
         {projectImages.length > 0 && (
           <section className={styles.projectImages}>
-            {projectImages.map((img) => (
-              <Image
-                key={img.asset._id}
-                src={img.asset.url}
-                alt={img.alt ?? project.title}
-                width={1600}
-                height={1200}
-                sizes="(max-width: 768px) 100vw, 80vw"
-                className={styles.projectImage}
-              />
-            ))}
+            {projectImages.map((img) => {
+              const width = img.asset.metadata?.dimensions?.width ?? 1200;
+              const height = img.asset.metadata?.dimensions?.height ?? 800;
+
+              return (
+                <div key={img.asset._id} className={styles.imageItem}>
+                  <Image
+                    src={img.asset.url}
+                    alt={img.alt ?? project.title}
+                    width={width}
+                    height={height}
+                    sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                    className={styles.projectImage}
+                  />
+                </div>
+              );
+            })}
           </section>
         )}
       </article>
