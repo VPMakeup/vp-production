@@ -21,52 +21,80 @@ export default function TriplePanelCarousel({
   interval = 6000,
 }: Props) {
   const [current, setCurrent] = useState(0);
+  const [prev, setPrev] = useState(0);
 
   useEffect(() => {
+    if (!slides.length) return;
+
     const timer = setInterval(() => {
-      setCurrent((prev) => (prev + 1) % slides.length);
+      setPrev(current);
+      setCurrent((current + 1) % slides.length);
     }, interval);
 
     return () => clearInterval(timer);
-  }, [slides.length, interval]);
+  }, [current, slides.length, interval]);
+
+  const currentSlide = slides[current];
+  const prevSlide = slides[prev];
 
   return (
     <section className={styles.wrapper}>
-      {slides.map((slide, index) => (
-        <div
-          key={index}
-          className={`${styles.slide} ${
-            index === current ? styles.active : ""
-          }`}
-        >
-          <div className={styles.panel}>
-            <Image
-              src={slide.leftImage}
-              alt="SFX makeup for projects by Victoria Poland"
-              fill
-              className={styles.image}
-              sizes="(max-width: 900px) 100vw, 33vw"
-            />
-          </div>
-
-          <div className={styles.panel}>
-            <Image
-              src={slide.centerImage}
-              alt="Film makeup for projects by Victoria Poland"
-              fill
-              className={styles.image}
-              sizes="(max-width: 900px) 100vw, 33vw"
-            />
-          </div>
-
-          <div
-            className={styles.panelText}
-            style={{ backgroundColor: slide.rightBg }}
-          >
-            <p>{slide.text}</p>
-          </div>
+      <div className={styles.grid}>
+        <div className={styles.panel}>
+          <FadeImage
+            src={currentSlide.leftImage}
+            prevSrc={prevSlide.leftImage}
+            alt="SFX makeup by Victoria Poland"
+          />
         </div>
-      ))}
+
+        <div className={styles.panel}>
+          <FadeImage
+            src={currentSlide.centerImage}
+            prevSrc={prevSlide.centerImage}
+            alt="Film makeup by Victoria Poland"
+          />
+        </div>
+
+        <div
+          className={styles.panelText}
+          style={{ backgroundColor: currentSlide.rightBg }}
+        >
+          <p>{currentSlide.text}</p>
+        </div>
+      </div>
     </section>
+  );
+}
+
+/* ---------- FadeImage helper ---------- */
+
+function FadeImage({
+  src,
+  prevSrc,
+  alt,
+}: {
+  src: string;
+  prevSrc: string;
+  alt: string;
+}) {
+  return (
+    <div className={styles.imageStack}>
+      <Image
+        src={prevSrc}
+        alt={alt}
+        fill
+        className={`${styles.image} ${styles.fadeOut}`}
+        sizes="(max-width: 900px) 100vw, 33vw"
+      />
+      <Image
+        src={src}
+        alt={alt}
+        fill
+        className={`${styles.image} ${styles.fadeIn}`}
+        sizes="(max-width: 900px) 100vw, 33vw"
+        priority
+      />
+    </div>
   );
 }
