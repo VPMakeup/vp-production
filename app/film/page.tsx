@@ -23,7 +23,7 @@ import { getProjectsByCategoryPaginated } from "@/sanity/lib/queries";
 import Navbar from "../components/navbar/Navbar";
 
 export default async function Film() {
-  const projects = await getProjectsByCategoryPaginated("film", 0, 9);
+  const projects = await getProjectsByCategoryPaginated("film", 0, 100);
 
   const infoText = "Check out my latest Film project";
   return (

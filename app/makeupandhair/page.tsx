@@ -23,7 +23,11 @@ import { getProjectsByCategoryPaginated } from "@/sanity/lib/queries";
 import Navbar from "../components/navbar/Navbar";
 
 export default async function MakeupAndHair() {
-  const projects = await getProjectsByCategoryPaginated("makeupandhair", 0, 9);
+  const projects = await getProjectsByCategoryPaginated(
+    "makeupandhair",
+    0,
+    100
+  );
 
   const infoText = "Check out my latest Makeup & Hair project";
   return (
