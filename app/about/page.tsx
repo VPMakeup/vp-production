@@ -1,5 +1,5 @@
-import InstagramFeed from "../components/instagram/instafeed";
-import InstagramProfile from "../components/instagram/instaprofile";
+import InstagramComponent from "../components/instagram/instagramComponent";
+
 import Navbar from "../components/navbar/Navbar";
 import ClientLogosSection from "./components/clients/ClientLogoSection";
 import PhotographersSection from "./components/PhotographersSection";
@@ -120,8 +120,7 @@ export default function AboutPage() {
         />
 
         <section className={styles.instagramSection}>
-          <InstagramProfile />
-          <InstagramFeed />
+          <InstagramComponent />
         </section>
       </div>
     </main>
