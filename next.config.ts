@@ -53,6 +53,14 @@ const nextConfig: NextConfig = {
       },
       {
         protocol: "https",
+        hostname: "**.behold.so",
+      },
+      {
+        protocol: "https",
+        hostname: "**.instagram.com",
+      },
+      {
+        protocol: "https",
         hostname: "scontent-sof1-2.cdninstagram.com",
       },
     ],
