@@ -5,7 +5,7 @@ import ContactLink from "../contactlink/ContactLink";
 type Profile = {
   username: string;
   biography?: string;
-  profilePictureUrl: string;
+  profilePictureUrl?: string;
   followersCount?: number;
   followsCount?: number;
   website?: string;
@@ -15,21 +15,27 @@ export default function InstagramProfile({ profile }: { profile: Profile }) {
   return (
     <div className={styles.profile_container}>
       <div className={styles.avatar_wrapper}>
-        <Image
-          src={profile.profilePictureUrl}
-          alt={profile.username}
-          fill
-          className={styles.profile_image}
-          sizes="96px"
-        />
+        {profile.profilePictureUrl ? (
+          <Image
+            src={profile.profilePictureUrl}
+            alt={profile.username ?? "Instagram profile"}
+            fill
+            className={styles.profile_image}
+            sizes="96px"
+          />
+        ) : (
+          <div className={styles.avatar_placeholder} />
+        )}
       </div>
 
       <div className={styles.bio_container}>
-        <ContactLink
-          href={`https://instagram.com/${profile.username}`}
-          label={`@${profile.username}`}
-          external
-        />
+        {profile.username && (
+          <ContactLink
+            href={`https://instagram.com/${profile.username}`}
+            label={`@${profile.username}`}
+            external
+          />
+        )}
 
         <div className={styles.stats}>
           {profile.followersCount !== undefined && (

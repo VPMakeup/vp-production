@@ -10,7 +10,6 @@ export default function AboutPage() {
   return (
     <main>
       <Navbar backgroundColor="#f3eeee" />
-      {/* -------- Structured Data -------- */}
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{

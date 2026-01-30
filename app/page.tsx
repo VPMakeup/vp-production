@@ -56,9 +56,9 @@ export default async function Home() {
       <section aria-label="Hero showcase">
         {heroImages.length > 0 && (
           <HeroNameCarousel
-            images={heroImages.map((img) =>
-              urlFor(img.image).width(1200).url()
-            )}
+            images={heroImages
+              .filter((img) => img.image) // <-- ignore nulls
+              .map((img) => urlFor(img.image).width(1200).url())}
             interval={4500}
           />
         )}
