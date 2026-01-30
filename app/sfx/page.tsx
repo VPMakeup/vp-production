@@ -23,7 +23,7 @@ import { getProjectsByCategoryPaginated } from "@/sanity/lib/queries";
 import Navbar from "../components/navbar/Navbar";
 
 export default async function SFX() {
-  const projects = await getProjectsByCategoryPaginated("sfx", 0, 9);
+  const projects = await getProjectsByCategoryPaginated("sfx", 0, 100);
 
   const infoText = "Check out my latest SFX project";
   return (
