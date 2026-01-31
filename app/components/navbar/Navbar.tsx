@@ -30,14 +30,24 @@ export default function Navbar({ backgroundColor }: NavbarProps) {
     >
       <div className={styles.logo}>
         <Link href="/" aria-label="Go to homepage">
-          <Image
-            src="/vp-logoblack.svg"
-            data-hover="/vp-pink.svg"
-            height={50}
-            width={80}
-            alt="Victoria Poland Logo"
-            className={styles.logoImage}
-          />
+          <span className={styles.logoWrap}>
+            <Image
+              src="/vp-logoblack.svg"
+              alt="Victoria Poland Logo"
+              width={80}
+              height={50}
+              priority
+              className={styles.logoDefault}
+            />
+            <Image
+              src="/vp-pink-new.svg"
+              alt=""
+              width={80}
+              height={50}
+              className={styles.logoHover}
+              aria-hidden
+            />
+          </span>
         </Link>
       </div>
 

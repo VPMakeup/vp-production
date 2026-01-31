@@ -15,19 +15,7 @@
 .logo {
   display: flex;
   align-items: center;
-}
-
-.logoImage {
-  content: url("/vp-logoblack.svg");
-  transition: opacity 0.4s ease;
-  -webkit-transition: opacity 0.4s ease;
-  -moz-transition: opacity 0.4s ease;
-  -ms-transition: opacity 0.4s ease;
-  -o-transition: opacity 0.4s ease;
-}
-
-.logo:hover .logoImage {
-  content: url("/vp-pink-new.svg");
+  height: 80px;
 }
 
 .menuButton {
@@ -69,6 +57,39 @@
   font-weight: 600;
 }
 
+.logoWrap {
+  position: relative;
+  width: 80px;
+  height: 80px;
+  display: block;
+  line-height: 0; /* ✅ kills inline image spacing */
+  overflow: hidden; /* ✅ prevents bleed */
+}
+
+.logoDefault,
+.logoHover {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: contain; /* ✅ keeps SVG tidy */
+  transition: opacity 0.3s ease;
+}
+
+.logoHover {
+  opacity: 0;
+}
+
+/* Desktop hover only */
+@media (hover: hover) {
+  .logoWrap:hover .logoHover {
+    opacity: 1;
+  }
+
+  .logoWrap:hover .logoDefault {
+    opacity: 0;
+  }
+}
 /* ---------- Mobile ---------- */
 
 @media (max-width: 768px) {
