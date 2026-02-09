@@ -45,6 +45,7 @@ export default function Featured({ projects }: Props) {
               fill
               className={styles.image}
               sizes="(min-width: 768px) 60vw, 100vw"
+              unoptimized
             />
           </div>
 

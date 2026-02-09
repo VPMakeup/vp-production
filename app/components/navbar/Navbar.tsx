@@ -35,15 +35,14 @@ export default function Navbar({ backgroundColor }: NavbarProps) {
               src="/vp-logoblack.svg"
               alt="Victoria Poland Logo"
               width={80}
-              height={50}
-              priority
+              height={80}
               className={styles.logoDefault}
             />
             <Image
               src="/vp-pink-new.svg"
               alt=""
               width={80}
-              height={50}
+              height={80}
               className={styles.logoHover}
               aria-hidden
             />

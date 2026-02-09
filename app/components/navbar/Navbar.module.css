@@ -15,7 +15,8 @@
 .logo {
   display: flex;
   align-items: center;
-  height: 80px;
+  height: auto;
+  width: auto;
 }
 
 .menuButton {
@@ -70,8 +71,8 @@
 .logoHover {
   position: absolute;
   inset: 0;
-  width: 100%;
-  height: 100%;
+  width: 80px;
+  height: 80px;
   object-fit: contain; /* ✅ keeps SVG tidy */
   transition: opacity 0.3s ease;
 }

@@ -31,6 +31,7 @@ export default function InstagramFeed({ posts }: { posts: Post[] }) {
                 fill
                 className={styles.image}
                 sizes="(max-width: 768px) 50vw, 25vw"
+                unoptimized
               />
             </div>
           </a>
