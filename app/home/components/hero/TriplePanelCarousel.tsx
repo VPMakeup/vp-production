@@ -93,7 +93,6 @@ function FadeImage({
         fill
         className={`${styles.image} ${styles.fadeIn}`}
         sizes="(max-width: 900px) 100vw, 33vw"
-        priority
       />
     </div>
   );

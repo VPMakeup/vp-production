@@ -47,6 +47,10 @@
   text-align: center;
   padding: 1rem;
   transition: opacity 0.3s ease;
+  -webkit-transition: opacity 0.3s ease;
+  -moz-transition: opacity 0.3s ease;
+  -ms-transition: opacity 0.3s ease;
+  -o-transition: opacity 0.3s ease;
 }
 
 .tile:hover .overlay {
