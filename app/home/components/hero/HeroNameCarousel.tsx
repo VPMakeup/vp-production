@@ -34,7 +34,6 @@ export default function HeroNameCarousel({
             alt="Featured SFX work projects by Victoria Poland"
             width={500}
             height={500}
-            priority
             sizes="(max-width: 768px) 70vw, 500px"
             className={styles.image}
           />
