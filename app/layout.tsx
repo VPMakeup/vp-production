@@ -67,6 +67,12 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
+      <head>
+        <meta
+          name="google-site-verification"
+          content="P4Rm6B21alrMAE5Z-5_2duU7wTPgeySg-grzNI1b83Q"
+        />
+      </head>
       <body className={`${bagnard.variable} ${optican.variable} antialiased`}>
         <main>{children}</main>
         <Footer />
