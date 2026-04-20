@@ -33,4 +33,5 @@ export type Project = ProjectPreview & {
   projectImages?: SanityImage[];
   publishedAt?: string;
   embedUrl?: string;
+  _updatedAt?: string;
 };

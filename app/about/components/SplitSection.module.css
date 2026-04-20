@@ -89,7 +89,7 @@
 /* ===== MOBILE ===== */
 @media (max-width: 900px) {
   .sideTitle {
-    position: static; /* stack on top */
+    position: static;
     writing-mode: horizontal-tb;
     transform: none;
     margin-bottom: 1.5rem;
@@ -97,10 +97,9 @@
     text-align: center;
     font-size: 2rem;
     letter-spacing: 0.25em;
-  }
-
-  .displayline {
-    margin: 0 auto; /* centers the line horizontally */
+    white-space: normal; /* ✅ IMPORTANT FIX */
+    line-height: 1.2;
+    max-width: 100%;
   }
 
   .sideTitleLeft,
@@ -128,7 +127,7 @@
   }
 
   .image {
-    width: 100%; /* responsive full width */
+    width: 100%;
     height: auto;
   }
 }
