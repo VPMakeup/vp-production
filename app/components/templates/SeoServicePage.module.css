@@ -1,0 +1,124 @@
+/* app/components/templates/SeoServicePage.module.css */
+
+.container {
+  display: flex;
+  flex-direction: column;
+  gap: 10rem;
+  margin: 0 auto;
+  padding: 6rem 8rem;
+  background-color: #f3eeee;
+  overflow-x: hidden;
+  font-family: var(--font-bagnard), sans-serif;
+  color: #3c3c3b;
+}
+
+.body p {
+  margin-bottom: 1.5rem;
+  line-height: 1.7;
+}
+
+/* FAQ Section */
+
+.faqSection {
+  width: 100%;
+}
+
+.faqInner {
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.faqTitle {
+  font-size: 2rem;
+  margin-bottom: 3rem;
+}
+
+.faqList {
+  display: flex;
+  flex-direction: column;
+  gap: 2.5rem;
+}
+
+.faqItem {
+  border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+  padding-bottom: 1.5rem;
+}
+
+.faqQuestion {
+  font-size: 1.2rem;
+  margin-bottom: 0.5rem;
+}
+
+.faqAnswer {
+  line-height: 1.7;
+  opacity: 0.85;
+}
+
+/* Instagram */
+
+.instagramSection {
+  display: flex;
+  flex-direction: column;
+  gap: 4rem;
+}
+.mapContactWrapper {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4rem;
+  align-items: start;
+}
+
+.contactBlock {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 1rem;
+  font-family: var(--font-bagnard), sans-serif;
+  color: #3c3c3b;
+}
+
+.contactBlock p {
+  line-height: 1.7;
+  margin: 0;
+}
+
+.ctaLink {
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  transition: opacity 0.2s ease;
+}
+
+.contactBlock a {
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+@media (max-width: 768px) {
+  .mapContactWrapper {
+    grid-template-columns: 1fr;
+  }
+
+  .contactBlock {
+    text-align: center;
+    align-items: center;
+  }
+
+  .contactBlock p {
+    text-align: center;
+  }
+}
+/* Responsive */
+
+@media (max-width: 1024px) {
+  .container {
+    padding: 5rem 3rem;
+    gap: 8rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .container {
+    padding: 4rem 1.5rem;
+    gap: 6rem;
+  }
+}

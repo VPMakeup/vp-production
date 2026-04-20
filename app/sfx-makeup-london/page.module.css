@@ -1,0 +1,27 @@
+/* Page-specific enhancements */
+
+.cta {
+  margin-top: 2.5rem;
+  padding-top: 1.5rem;
+}
+
+.cta p {
+  font-size: 1.05rem;
+  line-height: 1.7;
+}
+
+.ctaLink {
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  transition: opacity 0.2s ease;
+}
+
+.ctaLink:hover {
+  opacity: 0.6;
+}
+
+/* Projects spacing */
+
+.projectsSection {
+  margin-top: 4rem;
+}

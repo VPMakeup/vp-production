@@ -1,0 +1,15 @@
+# LLMs.txt for victoriapolandmakeup.com
+
+User-agent: *
+Allow: /
+
+# Sitemap location
+Sitemap: https://victoriapolandmakeup.com/sitemap.xml
+
+# Preferred format
+Content-type: text/html
+
+# Key sections
+Projects: https://victoriapolandmakeup.com/projects
+About: https://victoriapolandmakeup.com/about
+Contact: https://victoriapolandmakeup.com/contact

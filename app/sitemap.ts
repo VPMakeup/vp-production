@@ -1,7 +1,35 @@
 import type { MetadataRoute } from "next";
+import { createClient } from "next-sanity";
+import { Project } from "./types/project";
 
-export default function sitemap(): MetadataRoute.Sitemap {
+const client = createClient({
+  projectId: process.env.NEXT_PUBLIC_SANITY_PROJECT_ID!,
+  dataset: process.env.NEXT_PUBLIC_SANITY_DATASET!,
+  apiVersion: "2024-01-01",
+  useCdn: true,
+});
+
+export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const baseUrl = "https://victoriapolandmakeup.com";
+
+  const projects = await client.fetch(`
+    *[_type == "project" && defined(slug.current)]{
+      "slug": slug.current,
+      publishedAt,
+      _updatedAt
+    }
+  `);
+
+  const projectUrls = projects.map((project: Project) => ({
+    url: `${baseUrl}/projects/${project.slug}`,
+    lastModified: project._updatedAt
+      ? new Date(project._updatedAt)
+      : project.publishedAt
+        ? new Date(project.publishedAt)
+        : new Date(),
+    priority: 0.7,
+    changeFrequency: "weekly" as const,
+  }));
 
   return [
     {
@@ -34,5 +62,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
       lastModified: new Date(),
       priority: 0.7,
     },
+    ...projectUrls,
   ];
 }
