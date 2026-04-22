@@ -21,7 +21,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   `);
 
   const projectUrls = projects.map((project: Project) => ({
-    url: `${baseUrl}/projects/${project.slug}`,
+    url: `${baseUrl}/${project.slug}`,
     lastModified: project._updatedAt
       ? new Date(project._updatedAt)
       : project.publishedAt
@@ -61,6 +61,21 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
       url: `${baseUrl}/contact`,
       lastModified: new Date(),
       priority: 0.7,
+    },
+    {
+      url: `${baseUrl}/film-makeup-london`,
+      lastModified: new Date(),
+      priority: 0.7,
+    },
+    {
+      url: `${baseUrl}/sfx-makeup-london`,
+      lastModified: new Date(),
+      priority: 0.7,
+    },
+    {
+      url: `${baseUrl}/makeup-artist-london`,
+      lastModified: new Date(),
+      priority: 0.8,
     },
     ...projectUrls,
   ];
