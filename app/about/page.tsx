@@ -6,6 +6,16 @@ import PhotographersSection from "./components/PhotographersSection";
 import SplitSection from "./components/SplitSection";
 import styles from "./styles.module.css";
 
+export const metadata = {
+  metadataBase: new URL("https://www.victoriapolandmakeup.com"),
+  title: "About Victoria Poland | Makeup Artist & SFX Designer",
+  description:
+    "London-based makeup artist and SFX designer with over 15 years of experience across film, commercial and advertising.",
+  alternates: {
+    canonical: "/about",
+  },
+};
+
 export default function AboutPage() {
   return (
     <main>
@@ -18,9 +28,12 @@ export default function AboutPage() {
             "@type": "Person",
             name: "Victoria Poland",
             jobTitle: "Makeup Artist & SFX Designer",
-            url: "https://victoriapolandmakeup.com/about",
-            image: "https://victoriapolandmakeup.com/vp2.png",
-            sameAs: ["https://www.instagram.com/victoriapolandmakeup"],
+            url: "https://www.victoriapolandmakeup.com/about",
+            image: "https://www.victoriapolandmakeup.com/vp2.png",
+            sameAs: [
+              "https://www.instagram.com/victoriapolandmakeup",
+              "https://www.victoriapolandmakeup.com",
+            ],
             worksFor: {
               "@type": "Organization",
               name: "Freelance",

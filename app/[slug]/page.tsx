@@ -44,12 +44,16 @@ export async function generateMetadata({
     : "https://victoriapolandmakeup.com/og-default.jpg";
 
   return {
+    metadataBase: new URL("https://www.victoriapolandmakeup.com"),
     title,
     description,
+    alternates: {
+      canonical: `/${slug}`,
+    },
     openGraph: {
       title,
       description,
-      url: `https://victoriapolandmakeup.com/${slug}`,
+      url: `https://www.victoriapolandmakeup.com/${slug}`, // ✅ fixed
       siteName: "Victoria Poland Makeup",
       images: [
         {
@@ -101,7 +105,7 @@ export default async function ProjectPage({
               name: "Victoria Poland",
             },
             description,
-            url: `https://victoriapolandmakeup.com/${slug}`,
+            url: `https://www.victoriapolandmakeup.com/${slug}`,
           }),
         }}
       />

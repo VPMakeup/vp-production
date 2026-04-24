@@ -10,7 +10,7 @@ const client = createClient({
 });
 
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
-  const baseUrl = "https://victoriapolandmakeup.com";
+  const baseUrl = "https://www.victoriapolandmakeup.com";
 
   const projects = await client.fetch(`
     *[_type == "project" && defined(slug.current)]{
