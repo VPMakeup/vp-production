@@ -5,9 +5,13 @@ import { getProjectsByCategoryPaginated } from "@/sanity/lib/queries";
 import styles from "./page.module.css";
 
 export const metadata = {
+  metadataBase: new URL("https://www.victoriapolandmakeup.com"),
   title: "London Makeup Artist | Film, SFX & Commercial Makeup",
   description:
     "London-based makeup artist with 15+ years of experience across film, television, commercial and editorial productions.",
+  alternates: {
+    canonical: "/makeup-artist-london",
+  },
 };
 
 const infoText = "Explore selected film and commercial work";

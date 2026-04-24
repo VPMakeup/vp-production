@@ -5,9 +5,13 @@ import { getProjectsByCategoryPaginated } from "@/sanity/lib/queries";
 import styles from "./page.module.css";
 
 export const metadata = {
+  metadataBase: new URL("https://www.victoriapolandmakeup.com"),
   title: "London SFX Makeup Artist | Prosthetics & Special Effects",
   description:
     "London-based SFX makeup artist specialising in prosthetics, character design and practical effects for film and commercial productions.",
+  alternates: {
+    canonical: "/sfx-makeup-london",
+  },
 };
 
 export default async function Page() {

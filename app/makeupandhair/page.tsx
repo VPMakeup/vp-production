@@ -1,14 +1,18 @@
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://www.victoriapolandmakeup.com"),
   title: "Makeup & Hair Artist | Victoria Poland",
   description:
     "Commercial, editorial, and fashion makeup & hair projects by London-based artist Victoria Poland.",
+  alternates: {
+    canonical: "/makeupandhair",
+  },
   openGraph: {
     title: "Makeup & Hair Artist | Victoria Poland",
     description:
       "Commercial, editorial, and fashion makeup & hair projects by Victoria Poland.",
-    url: "https://victoriapolandmakeup.com/makeupandhair",
+    url: "https://www.victoriapolandmakeup.com/makeupandhair", // ✅ fixed
     siteName: "Victoria Poland Makeup",
     type: "website",
   },
