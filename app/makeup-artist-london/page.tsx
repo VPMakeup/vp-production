@@ -54,50 +54,73 @@ export default async function Page() {
       seeMoreLink="/makeupandhair"
       faqs={[
         {
-          question: "What does a London makeup artist do?",
+          question: "What types of makeup projects do you work on?",
           answer:
-            "A professional makeup artist works across film, television, commercial and editorial productions to create character-driven and camera-ready looks.",
+            "Victoria works across commercial campaigns, editorial shoots, branded content, music videos and creative productions, tailoring makeup to each project’s visual style and creative direction.",
         },
         {
-          question: "Do you work on both film and commercial projects?",
+          question: "Do you provide both makeup and hair styling?",
           answer:
-            "Yes, Victoria works across film, TV, advertising campaigns and editorial shoots in London and internationally.",
+            "Yes, services can include both makeup and hair styling depending on the production requirements, helping create cohesive looks for photography, advertising and screen work.",
         },
         {
-          question: "Are you also an SFX makeup artist?",
+          question: "Do you offer SFX and prosthetic makeup?",
           answer:
-            "Yes, her work includes SFX makeup, prosthetics and character effects for screen and commercial production.",
+            "Yes, experience includes SFX makeup, prosthetics and character-based effects for commercial, film and creative productions.",
+        },
+        {
+          question: "Do you work with photographers and creative agencies?",
+          answer:
+            "Yes, Victoria regularly collaborates with photographers, directors, stylists, brands and creative agencies across editorial and commercial projects.",
         },
         {
           question: "How do I book a makeup artist in London?",
           answer:
-            "You can enquire via the contact page to discuss availability, creative direction and production details.",
+            "Enquiries can be made through the contact page to discuss project details, shoot dates, creative references and availability.",
         },
       ]}
       body={
         <>
           <p>
-            Victoria Poland is a London-based makeup artist with over 15 years
-            of experience working across film, television, commercial campaigns
-            and editorial productions.
+            Victoria Poland is a London-based makeup artist specialising in
+            commercial, editorial and creative makeup for brands, advertising
+            campaigns, music videos and digital content.
           </p>
 
           <p>
-            Her work focuses on character-led makeup that supports storytelling
-            on screen and in print, collaborating closely with directors,
-            photographers and creative teams.
+            With over 15 years of industry experience, she collaborates with
+            photographers, stylists, creative agencies and production teams to
+            create polished, visually distinctive makeup looks tailored to each
+            project.
           </p>
 
           <p>
-            She is experienced in both beauty and technical makeup, including
-            SFX and prosthetics, adapting her approach to suit each production’s
-            visual requirements.
+            Her work spans beauty makeup, fashion-inspired looks, grooming, hair
+            styling and SFX makeup, adapting seamlessly to both natural and
+            highly conceptual creative briefs.
           </p>
 
           <p>
-            Based in London, she works across UK and international shoots,
-            bringing a calm, reliable presence to fast-paced production
-            environments.
+            Based in London and available for UK and international projects,
+            Victoria brings a calm, professional approach to studio shoots,
+            branded campaigns and fast-moving creative environments.
+          </p>
+          <h2>Recent London Makeup Work</h2>
+          <p>
+            Recent Makeup projects in London have included the Hirsh Project
+            campaign, shot in London.{" "}
+            <Link className={styles.ctaLink} href="/hirsh-london">
+              {" "}
+              Hirsh London
+            </Link>{" "}
+            for Hirsh. Commercial standard makeup for this campaign,
+            highlighting luxury. Another was the wear the damn shorts campaign
+            for Sweaty Betty.
+            <Link className={styles.ctaLink} href="/wear-the-damn-shorts">
+              {" "}
+              Wear the Damn Shorts
+            </Link>{" "}
+            This was shot at Kennington studios in London.
           </p>
 
           <p>
@@ -127,6 +150,12 @@ export default async function Page() {
               category="makeupandhair"
               infoText={infoText}
             />
+          </section>
+          <section>
+            Looking for film makeup work instead?
+            <Link className={styles.ctaLink} href="/film-makeup-london">
+              View film makeup services
+            </Link>
           </section>
         </>
       }
