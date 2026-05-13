@@ -53,24 +53,31 @@ export default async function Page() {
       }
       faqs={[
         {
-          question: "Do you work on feature films and TV productions?",
+          question:
+            "Do you provide continuity makeup for film and television productions?",
           answer:
-            "Yes, Victoria works across feature films, television dramas and commercial productions in the UK and internationally.",
+            "Yes, continuity is maintained across scenes and shooting days to ensure makeup remains visually consistent throughout production.",
         },
         {
-          question: "What does a film makeup artist do?",
+          question: "Can you work on location shoots and studio productions?",
           answer:
-            "A film makeup artist is responsible for character continuity, on-set application, and ensuring visual consistency across scenes and shooting days.",
+            "Yes, Victoria has experience working across studio environments, exterior locations and fast-paced on-set productions in the UK and internationally.",
         },
         {
-          question: "Do you work on both studio and location shoots?",
+          question:
+            "Do you collaborate with directors and costume departments?",
           answer:
-            "Yes, she has experience working across studio environments, exterior locations and international productions.",
+            "Yes, film makeup work often involves close collaboration with directors, costume designers, hair departments and production teams to support the visual direction of a project.",
         },
         {
-          question: "How do I hire a film makeup artist in London?",
+          question: "What experience do you have in film and TV makeup?",
           answer:
-            "You can enquire via the contact page to discuss availability, creative requirements and production details.",
+            "Victoria has over 15 years of experience working across feature films, television dramas, music videos and commercial productions, adapting makeup for both cinematic and broadcast environments.",
+        },
+        {
+          question: "How do I book a film makeup artist in London?",
+          answer:
+            "Production enquiries can be made via the contact page to discuss shoot schedules, creative requirements, locations and availability.",
         },
       ]}
       body={
@@ -80,25 +87,37 @@ export default async function Page() {
             feature films, television and commercial productions, with over 15
             years of industry experience.
           </p>
-
           <p>
             Her work focuses on character-driven makeup and continuity, ensuring
             visual consistency across scenes while supporting narrative and
             performance on screen.
           </p>
-
           <p>
             She collaborates closely with directors, costume departments and
             production teams from pre-production through to final shoot days,
             adapting seamlessly to the demands of each project.
           </p>
-
           <p>
             Experience spans studio-based filming, on-location shoots and
             international productions, with a calm and efficient approach to
             fast-paced environments.
           </p>
-
+          <h2>Recent London Film Work</h2>
+          <p>
+            Recent Film projects in London have included the Release the Peace
+            campaign, shot in London.{" "}
+            <Link className={styles.ctaLink} href="/release-the-peace">
+              {" "}
+              Release the Peace Project
+            </Link>{" "}
+            for Loaf productions. Another was the Jungle Good Times music video
+            promotional film.
+            <Link className={styles.ctaLink} href="/good-times">
+              {" "}
+              Jungle - Good Times
+            </Link>{" "}
+            This was shot at Holborn studios in London.
+          </p>
           <p>
             Learn more{" "}
             <Link className={styles.ctaLink} href="/about">
@@ -106,7 +125,6 @@ export default async function Page() {
             </Link>{" "}
             or explore selected film work below.
           </p>
-
           {/* CTA */}
           <div className={styles.cta}>
             <p>
@@ -117,7 +135,6 @@ export default async function Page() {
               to discuss your production.
             </p>
           </div>
-
           {/* PROJECTS */}
           <section
             className={styles.projectsSection}
@@ -128,6 +145,12 @@ export default async function Page() {
               category="film"
               infoText="Selected film and TV work"
             />
+          </section>
+          <section>
+            Looking for commercial or editorial makeup work instead?
+            <Link className={styles.ctaLink} href="/makeup-artist-london">
+              View makeup artist services
+            </Link>
           </section>
         </>
       }
